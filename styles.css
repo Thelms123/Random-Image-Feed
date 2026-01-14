@@ -1,0 +1,109 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+body{
+    font-family: Poppins, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#image-container{
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.image{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    width: calc(33% - 10px);
+}
+img{
+    width: 100%;
+    border-radius: 8px;
+}
+#loading-indicator{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.loader{
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 40px auto;
+    animation: loader 1s linear infinite;
+}
+@keyframes loader{
+    from {transform: rotate(0deg);
+    }
+    to {transform: rotate(360deg);
+    }
+}*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    font-family: Poppins, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Center vertically in the viewport */
+    background-color: #f4f4f4; /* Optional background color */
+}
+
+#image-container {
+    display: flex;
+    flex-direction: column; /* Stack images vertically */
+    align-items: center; /* Center images horizontally */
+    justify-content: center;
+    width: 100%;
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0; /* Space between images */
+    width: 80%; /* Adjust the width as per the design */
+}
+
+img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover; /* Ensure the image fits well */
+}
+
+#loading-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.loader {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 40px auto;
+    animation: loader 1s linear infinite;
+}
+
+@keyframes loader {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
