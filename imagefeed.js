@@ -30,14 +30,28 @@ const displayImages = (images) => {
 };
 
 // Detect when the user reaches the bottom of the page
-const onScroll = () => {
-    // Check if the user has scrolled to the bottom
-    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-        currentPage++;  // Increment the page number
-        fetchImages();  // Fetch the next set of images
+let isLoading = false;
+
+const sentinel = document.getElementById("sentinel");
+
+const observer = new IntersectionObserver(async (entries) => {
+    if (entries[0].isIntersecting && !isLoading) {
+        isLoading = true;
+        currentPage++;
+
+        try {
+            await fetchImages();
+        } catch (err) {
+            console.error("Error fetching images:", err);
+        }
+
+        isLoading = false;
     }
-};
-window.addEventListener('scroll', onScroll);
+}, {
+    rootMargin: "200px" // loads slightly before bottom
+});
+
+observer.observe(sentinel);
 
 fetchImages();
 
